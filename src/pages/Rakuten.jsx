@@ -2,14 +2,33 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { RiRefreshFill } from "react-icons/ri";
 import websiteImg from "../assets/images/website.jpg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Rakuten() {
+  const [numberOfRq, setNumberOfRq] = useState(5);
+  const [rqInterval, setRqInterval] = useState(30);
   const navigate = useNavigate();
 
   const navigateHandler = () => {
     navigate("/");
   };
 
+  const monitoringHandler = (e) => {
+    switch (e.target.value) {
+      case "時限商品のため監視しない":
+        setNumberOfRq(5)
+        break;
+      case "商品ページ監視から始める":
+        setNumberOfRq(1)
+        break;
+      case "カート挿入コマンドから始める":
+        setNumberOfRq(1)
+        break;
+    
+      default:
+        break;
+    }
+  }
   return (
     <>
       <div className="bg-[#101204] min-h-screen">
@@ -96,6 +115,8 @@ export default function Rakuten() {
                 <span className="text-[#BBBBBB]">要求回数</span>
                 <input
                   type="text"
+                  value={numberOfRq}
+                  onChange={(e) => setNumberOfRq(e.target.value)}
                   className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
                 />
               </div>
@@ -103,6 +124,8 @@ export default function Rakuten() {
                 <span className="text-[#BBBBBB]">要求間隔</span>
                 <input
                   type="text"
+                  value={rqInterval}
+                  onChange={(e) => setRqInterval(e.target.value)}
                   className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
                 />
               </div>
@@ -146,10 +169,11 @@ export default function Rakuten() {
                   name=""
                   id=""
                   className="p-1 bg-[#101204] rounded-lg outline-none"
+                  onChange={monitoringHandler}
                 >
-                  <option value="">時限商品のため監視しない</option>
-                  <option value="">商品ページ監視から始める</option>
-                  <option value="">カート挿入コマンドから始める</option>
+                  <option value="時限商品のため監視しない">時限商品のため監視しない</option>
+                  <option value="商品ページ監視から始める">商品ページ監視から始める</option>
+                  <option value="カート挿入コマンドから始める">カート挿入コマンドから始める</option>
                 </select>
               </div>
               <div className="flex gap-3 items-center">
