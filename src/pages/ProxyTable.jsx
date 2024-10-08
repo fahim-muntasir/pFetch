@@ -63,10 +63,10 @@ export default function ProxyTable() {
           <table className="w-full text-sm text-center text-gray-400">
             <thead className="font-sans text-lg uppercase bg-[#22272B] text-gray-400">
               <tr>
-                <th scope="col" className="px-4 py-5 w-24">
+                <th scope="col" className="px-4 py-6 w-24">
                   No.
                 </th>
-                <th scope="col" className="px-4 py-5 w-16">
+                <th scope="col" className="px-4 py-6 w-16">
                   <input
                     id="select-all"
                     type="checkbox"
@@ -75,7 +75,7 @@ export default function ProxyTable() {
                     className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
                   />
                 </th>
-                <th scope="col" className="px-4 py-5 text-left">
+                <th scope="col" className="px-4 py-6 text-left">
                   Proxy
                 </th>
               </tr>
@@ -86,7 +86,7 @@ export default function ProxyTable() {
                   key={i}
                   className={`${i % 2 === 0 ? "" : "bg-[#22272B78]"} text-lg`}
                 >
-                  <td className="px-4 py-4">{i + 1}</td>
+                  <td className="px-4 py-5">{i + 1}</td>
                   <td className="text-center">
                     <input
                       id={`checkbox-${i}`}
@@ -96,7 +96,7 @@ export default function ProxyTable() {
                       className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
                     />
                   </td>
-                  <td className="px-4 py-4 text-left">
+                  <td className="px-4 py-5 text-left">
                     45.32.56.105:12968:m3P02c:g3thZZ
                   </td>
                 </tr>
