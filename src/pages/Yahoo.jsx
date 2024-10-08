@@ -96,6 +96,7 @@ export default function Yahoo() {
                 <span className="text-[#BBBBBB]">要求回数</span>
                 <input
                   type="text"
+                  value={5}
                   className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
                 />
               </div>
@@ -103,6 +104,7 @@ export default function Yahoo() {
                 <span className="text-[#BBBBBB]">要求間隔</span>
                 <input
                   type="text"
+                  value={30}
                   className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
                 />
               </div>
