@@ -33,7 +33,7 @@ export default function TableHeader({
         <RiLogoutCircleRLine className="text-lg md:text-xl" />
         <span>エクスポート</span>
       </div>
-      <div className="flex items-center gap-3 md:gap-5 bg-[#FD7E145E] h-[52px] md:h-[58px] px-4 md:px-5 rounded-2xl text-white hover:bg-[#FD7E14]">
+      <div className="flex items-center gap-3 md:gap-5 bg-[#FD7E145E] py-2 md:py-3 px-4 md:px-5 rounded-2xl text-white hover:bg-[#FD7E14]">
         <GoAlertFill className="text-lg md:text-xl" />
         <span className="text-xs md:text-base">
           データ確定はTab or Enter押下時

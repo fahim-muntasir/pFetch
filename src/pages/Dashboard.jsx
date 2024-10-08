@@ -72,10 +72,10 @@ export default function Dashboard() {
           <table className="w-full text-sm text-center text-gray-400">
             <thead className="font-sans text-lg uppercase bg-[#22272B] text-gray-400">
               <tr>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   No.
                 </th>
-                <th scope="col" className="px-4 py-5 text-center ">
+                <th scope="col" className="px-4 py-6 text-center ">
                   <input
                     id="select-all"
                     type="checkbox"
@@ -84,37 +84,37 @@ export default function Dashboard() {
                     className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
                   />
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   Website
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   商品名
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   Acch.No.
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   Cch.No.
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   PA
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   タイマー開始時刻
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   進歩
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   ログ
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   Switch
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   Play
                 </th>
-                <th scope="col" className="px-4 py-5">
+                <th scope="col" className="px-4 py-6">
                   Trash
                 </th>
               </tr>
@@ -125,7 +125,7 @@ export default function Dashboard() {
                   key={i}
                   className={`${i % 2 === 0 ? "" : "bg-[#22272B78]"} text-lg cursor-pointer`}
                 >
-                  <td className="px-4 py-4" onClick={handleNavigation}>{i + 1}</td>
+                  <td className="px-4 py-5" onClick={handleNavigation}>{i + 1}</td>
                   <td className="text-center">
                     <input
                       id={`checkbox-${i}`}
@@ -135,13 +135,13 @@ export default function Dashboard() {
                       className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
                     />
                   </td>
-                  <td className="px-4 py-4" onClick={handleNavigation}>楽天市場</td>
-                  <td className="px-4 py-4" onClick={handleNavigation}>商品名</td>
-                  <td className="px-4 py-4" onClick={handleNavigation}>0</td>
-                  <td className="px-4 py-4" onClick={handleNavigation}>1</td>
-                  <td className="px-4 py-4" onClick={handleNavigation}>0</td>
-                  <td className="px-4 py-4" onClick={handleNavigation}>00:00:00</td>
-                  <td className="px-4 py-4" onClick={handleNavigation}>
+                  <td className="px-4 py-5" onClick={handleNavigation}>楽天市場</td>
+                  <td className="px-4 py-5" onClick={handleNavigation}>商品名</td>
+                  <td className="px-4 py-5" onClick={handleNavigation}>0</td>
+                  <td className="px-4 py-5" onClick={handleNavigation}>1</td>
+                  <td className="px-4 py-5" onClick={handleNavigation}>0</td>
+                  <td className="px-4 py-5" onClick={handleNavigation}>00:00:00</td>
+                  <td className="px-4 py-5" onClick={handleNavigation}>
                     {/* Progress Bar */}
                     <div className="w-full bg-gray-600 rounded-full h-2.5">
                       <div
@@ -150,8 +150,8 @@ export default function Dashboard() {
                       ></div>
                     </div>
                   </td>
-                  <td className="px-4 py-4" onClick={handleNavigation}></td>
-                  <td className="px-4 py-4">
+                  <td className="px-4 py-5" onClick={handleNavigation}></td>
+                  <td className="px-4 py-5">
                     <div className="relative inline-block w-12 h-6">
                       <input
                         type="checkbox"
@@ -162,12 +162,12 @@ export default function Dashboard() {
                       <span className="absolute top-1/2 left-[5px] w-4 h-4 rounded-full bg-white shadow-md transform -translate-y-1/2 peer-checked:translate-x-6 transition-transform"></span>
                     </div>
                   </td>
-                  <td className="px-4 py-4">
+                  <td className="px-4 py-5">
                     <button className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[27px] h-[27px] flex justify-center items-center">
                       <FaPlay />
                     </button>
                   </td>
-                  <td className="px-4 py-4">
+                  <td className="px-4 py-5">
                     <button className="bg-[#EB2E455E] hover:bg-[#EB2E455E] border border-[#EB2E45] text-[#EB2E45] rounded-full w-[27px] h-[27px] flex justify-center items-center">
                       <RiDeleteBin6Line />
                     </button>
