@@ -1,0 +1,179 @@
+import { useState } from "react";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { FaPlay } from "react-icons/fa6";
+import Header from "../components/dashboard/Header";
+import { getTotalPage, getVisibleData } from "../utils/pagination";
+import { useNavigate } from "react-router-dom";
+
+export default function Dashboard() {
+  const [selected, setSelected] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
+  const [tableLength] = useState(15);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const navigate = useNavigate();
+
+  // Calculate total pages
+  const totalPages = getTotalPage(tableLength, rowsPerPage);
+
+  // Handle individual checkbox selection
+  const handleCheckboxChange = (index) => {
+    setSelected((prevSelected) => {
+      if (prevSelected.includes(index)) {
+        return prevSelected.filter((item) => item !== index);
+      } else {
+        return [...prevSelected, index];
+      }
+    });
+  };
+
+  // Handle "select all" checkbox
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelected([]);
+    } else {
+      setSelected(Array.from({ length: tableLength }, (_, i) => i));
+    }
+    setSelectAll(!selectAll);
+  };
+
+  // Handle page change
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    setSelectAll(false);
+  };
+
+  // Handle rows per page change
+  const handleRowsPerPageChange = (rows) => {
+    setRowsPerPage(rows);
+    setCurrentPage(1);
+  };
+
+  // Get the current data for the page
+  const visibleData = getVisibleData(tableLength, rowsPerPage, currentPage);
+
+  return (
+    <div className="flex flex-col gap-4">
+      <Header
+        currentPage={currentPage}
+        totalPages={totalPages}
+        rowsPerPage={rowsPerPage}
+        handlePageChange={handlePageChange}
+        handleRowsPerPageChange={handleRowsPerPageChange}
+      />
+      <div className="p-6 text-gray-200">
+        <div className="overflow-x-auto rounded-t-3xl">
+          <table className="w-full text-sm text-center text-gray-400">
+            <thead className="font-sans text-lg uppercase bg-[#22272B] text-gray-400">
+              <tr>
+                <th scope="col" className="px-4 py-5">
+                  No.
+                </th>
+                <th scope="col" className="px-4 py-5 text-center ">
+                  <input
+                    id="select-all"
+                    type="checkbox"
+                    checked={selectAll}
+                    onChange={handleSelectAll} // Toggle all checkboxes
+                    className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
+                  />
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  Website
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  商品名
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  Acch.No.
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  Cch.No.
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  PA
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  タイマー開始時刻
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  進歩
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  ログ
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  Switch
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  Play
+                </th>
+                <th scope="col" className="px-4 py-5">
+                  Trash
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleData.map((i) => (
+                <tr
+                  key={i}
+                  className={`${i % 2 === 0 ? "" : "bg-[#22272B78]"} text-lg cursor-pointer`}
+                  onClick={() => navigate("/Webサイト選択")}
+                >
+                  <td className="px-4 py-4">{i + 1}</td>
+                  <td className="text-center">
+                    <input
+                      id={`checkbox-${i}`}
+                      type="checkbox"
+                      checked={selected.includes(i)} // Check if the row is selected
+                      onChange={() => handleCheckboxChange(i)} // Handle selection change
+                      className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
+                    />
+                  </td>
+                  <td className="px-4 py-4">楽天市場</td>
+                  <td className="px-4 py-4">商品名</td>
+                  <td className="px-4 py-4">0</td>
+                  <td className="px-4 py-4">1</td>
+                  <td className="px-4 py-4">0</td>
+                  <td className="px-4 py-4">00:00:00</td>
+                  <td className="px-4 py-4">
+                    {/* Progress Bar */}
+                    <div className="w-full bg-gray-600 rounded-full h-2.5">
+                      <div
+                        className="bg-green-500 h-2.5 rounded-full"
+                        style={{ width: `${(i + 1) * 10}%` }}
+                      ></div>
+                    </div>
+                  </td>
+                  <td className="px-4 py-4"></td>
+                  <td className="px-4 py-4">
+                    <div className="relative inline-block w-12 h-6">
+                      <input
+                        type="checkbox"
+                        id={`flexSwitchCheckDefault${i}`}
+                        role="switch"
+                        className="peer appearance-none w-full h-full bg-[#84848454] rounded-full transition-colors cursor-pointer checked:bg-[#36C7707A] focus:outline-none"
+                      />
+                      <span className="absolute top-1/2 left-[1px] w-5 h-5 rounded-full bg-white shadow transform -translate-y-1/2 peer-checked:translate-x-6 transition-transform"></span>
+                    </div>
+                  </td>
+                  <td className="px-4 py-4">
+                    <button className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[35px] h-[35px] flex justify-center items-center">
+                      <FaPlay />
+                    </button>
+                  </td>
+                  <td className="px-4 py-4">
+                    <button className="bg-[#EB2E455E] hover:bg-[#EB2E455E] border border-[#EB2E45] text-[#EB2E45] rounded-full p-2">
+                      <RiDeleteBin6Line />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
