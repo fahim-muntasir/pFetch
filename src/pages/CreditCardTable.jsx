@@ -75,7 +75,7 @@ export default function CreditCardTable() {
                     className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
                   />
                 </th>
-                <th scope="col" className="px-4 py-6 w-24">
+                <th scope="col" className="px-4 py-6 w-[8rem]">
                   カード種別
                 </th>
                 <th scope="col" className="px-4 py-6 text-left">
