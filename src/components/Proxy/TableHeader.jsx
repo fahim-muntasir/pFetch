@@ -17,23 +17,23 @@ export default function TableHeader({
 }) {
   return (
     <div className="px-4 md:px-6 flex flex-wrap justify-between md:justify-end items-center pt-6 md:pt-10 gap-4 md:gap-10">
-      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-[#36C770] bg-[#36C77054] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#36C770] hover:text-white shadow-lg">
+      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-[#36C770] bg-[#36C77054] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#36C770] hover:text-white shadow-lg cursor-pointer">
         <BsPlusCircleFill className="text-lg md:text-xl" />
         <span>行追加</span>
       </div>
-      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-[#EB2E45] bg-[#EA2E4554] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#EB2E45] hover:text-white shadow-lg">
+      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-[#EB2E45] bg-[#EA2E4554] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#EB2E45] hover:text-white shadow-lg cursor-pointer">
         <RiDeleteBin6Line className="text-lg md:text-xl" />
         <span>行削除</span>
       </div>
-      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-white bg-[#22272B] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#364149] hover:text-white">
+      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-white bg-[#22272B] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#364149] hover:text-white cursor-pointer">
         <RiLogoutCircleLine className="text-lg md:text-xl" />
         <span>インポート</span>
       </div>
-      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-white bg-[#22272B] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#364149] hover:text-white">
+      <div className="flex items-center gap-2 md:gap-3 text-sm md:text-base text-white bg-[#22272B] py-2 md:py-3 px-4 md:px-5 rounded-full hover:bg-[#364149] hover:text-white cursor-pointer">
         <RiLogoutCircleRLine className="text-lg md:text-xl" />
         <span>エクスポート</span>
       </div>
-      <div className="flex items-center gap-2 md:gap-2 bg-[#FD7E145E]  py-2 md:py-3 px-4 md:px-5 rounded-2xl text-white hover:bg-[#FD7E14] group">
+      <div className="flex items-center gap-2 md:gap-2 bg-[#FD7E145E]  py-2 md:py-3 px-4 md:px-5 rounded-2xl text-white hover:bg-[#FD7E14] group cursor-pointer">
         <GoCheckCircleFill className="text-lg md:text-xl text-[#fd7e14] group-hover:text-white" />
         <span className="text-xs md:text-base">入力チェック</span>
       </div>
