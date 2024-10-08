@@ -13,11 +13,16 @@ export default function Dashboard() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const navigate = useNavigate();
 
+  const handleNavigation = () => {
+    navigate("/Webサイト選択")
+  }
+
   // Calculate total pages
   const totalPages = getTotalPage(tableLength, rowsPerPage);
 
   // Handle individual checkbox selection
-  const handleCheckboxChange = (index) => {
+  const handleCheckboxChange = (index, e) => {
+    e.stopPropagation();
     setSelected((prevSelected) => {
       if (prevSelected.includes(index)) {
         return prevSelected.filter((item) => item !== index);
@@ -119,25 +124,24 @@ export default function Dashboard() {
                 <tr
                   key={i}
                   className={`${i % 2 === 0 ? "" : "bg-[#22272B78]"} text-lg cursor-pointer`}
-                  onClick={() => navigate("/Webサイト選択")}
                 >
-                  <td className="px-4 py-4">{i + 1}</td>
+                  <td className="px-4 py-4" onClick={handleNavigation}>{i + 1}</td>
                   <td className="text-center">
                     <input
                       id={`checkbox-${i}`}
                       type="checkbox"
                       checked={selected.includes(i)} // Check if the row is selected
-                      onChange={() => handleCheckboxChange(i)} // Handle selection change
+                      onChange={(e) => handleCheckboxChange(i, e)} // Handle selection change
                       className="w-4 h-4 bg-transparent border-2 border-white rounded appearance-none cursor-pointer checked:bg-blue-600 checked:border-blue-600 focus:ring-2 focus:ring-blue-500"
                     />
                   </td>
-                  <td className="px-4 py-4">楽天市場</td>
-                  <td className="px-4 py-4">商品名</td>
-                  <td className="px-4 py-4">0</td>
-                  <td className="px-4 py-4">1</td>
-                  <td className="px-4 py-4">0</td>
-                  <td className="px-4 py-4">00:00:00</td>
-                  <td className="px-4 py-4">
+                  <td className="px-4 py-4" onClick={handleNavigation}>楽天市場</td>
+                  <td className="px-4 py-4" onClick={handleNavigation}>商品名</td>
+                  <td className="px-4 py-4" onClick={handleNavigation}>0</td>
+                  <td className="px-4 py-4" onClick={handleNavigation}>1</td>
+                  <td className="px-4 py-4" onClick={handleNavigation}>0</td>
+                  <td className="px-4 py-4" onClick={handleNavigation}>00:00:00</td>
+                  <td className="px-4 py-4" onClick={handleNavigation}>
                     {/* Progress Bar */}
                     <div className="w-full bg-gray-600 rounded-full h-2.5">
                       <div
@@ -146,7 +150,7 @@ export default function Dashboard() {
                       ></div>
                     </div>
                   </td>
-                  <td className="px-4 py-4"></td>
+                  <td className="px-4 py-4" onClick={handleNavigation}></td>
                   <td className="px-4 py-4">
                     <div className="relative inline-block w-12 h-6">
                       <input
