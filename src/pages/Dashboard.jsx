@@ -157,18 +157,18 @@ export default function Dashboard() {
                         type="checkbox"
                         id={`flexSwitchCheckDefault${i}`}
                         role="switch"
-                        className="peer appearance-none w-full h-full bg-[#84848454] rounded-full transition-colors cursor-pointer checked:bg-[#36C7707A] focus:outline-none"
+                        className="peer appearance-none w-9 h-[17px] bg-[#84848454] rounded-full transition-colors cursor-pointer checked:bg-[#36C7707A] focus:outline-none mb-[1px]"
                       />
-                      <span className="absolute top-1/2 left-[1px] w-5 h-5 rounded-full bg-white shadow transform -translate-y-1/2 peer-checked:translate-x-6 transition-transform"></span>
+                      <span className="absolute top-1/2 left-[5px] w-4 h-4 rounded-full bg-white shadow-md transform -translate-y-1/2 peer-checked:translate-x-6 transition-transform"></span>
                     </div>
                   </td>
                   <td className="px-4 py-4">
-                    <button className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[35px] h-[35px] flex justify-center items-center">
+                    <button className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[27px] h-[27px] flex justify-center items-center">
                       <FaPlay />
                     </button>
                   </td>
                   <td className="px-4 py-4">
-                    <button className="bg-[#EB2E455E] hover:bg-[#EB2E455E] border border-[#EB2E45] text-[#EB2E45] rounded-full p-2">
+                    <button className="bg-[#EB2E455E] hover:bg-[#EB2E455E] border border-[#EB2E45] text-[#EB2E45] rounded-full w-[27px] h-[27px] flex justify-center items-center">
                       <RiDeleteBin6Line />
                     </button>
                   </td>

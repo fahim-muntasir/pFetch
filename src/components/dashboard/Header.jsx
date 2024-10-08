@@ -34,14 +34,14 @@ export default function Header({
           <span className="absolute top-1/2 left-[1px] w-5 h-5 rounded-full bg-white shadow-sm transform -translate-y-1/2 peer-checked:translate-x-6 transition-transform"></span>
         </div>
       </div>
-      <div className="flex gap-10 items-center bg-[#22272B] h-[62px] px-5 rounded-full">
-        <button className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[35px] h-[35px]  flex justify-center items-center">
+      <div className="flex gap-10 items-center bg-[#22272B] py-2 px-4 rounded-full">
+        <button className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[32px] h-[32px]  flex justify-center items-center">
           <FaPlay />
         </button>
-        <button className="bg-[#EB2E4554] hover:bg-red-600 text-[#EA2E45] rounded-full w-[35px] h-[35px]  flex justify-center items-center">
+        <button className="bg-[#EB2E4554] hover:bg-red-600 text-[#EA2E45] rounded-full w-[32px] h-[32px]  flex justify-center items-center">
           <RiCheckboxBlankFill />
         </button>
-        <button className="bg-[#EB2E455E] hover:bg-[#EB2E455E] border border-[#EB2E45] text-white rounded-full w-[35px] h-[35px]  flex justify-center items-center">
+        <button className="bg-[#EB2E455E] hover:bg-[#EB2E455E] border border-[#EB2E45] text-white rounded-full w-[32px] h-[32px]  flex justify-center items-center">
           <RiDeleteBin6Line />
         </button>
       </div>
