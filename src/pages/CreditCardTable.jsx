@@ -123,7 +123,10 @@ export default function CreditCardTable() {
                         }
                         className="h-[42px] w-[101px] bg-[#22272B] text-white rounded px-2"
                       >
+                        <option value="VISA">VISA</option>
+                        <option value="AMEX">AMEX</option>
                         <option value="Master">Master</option>
+                        <option value="JCB">JCB</option>
                       </select>
                     </div>
                   </td>
