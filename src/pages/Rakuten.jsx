@@ -1,8 +1,14 @@
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { RiRefreshFill } from "react-icons/ri";
 import websiteImg from "../assets/images/website.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Rakuten() {
+  const navigate = useNavigate();
+
+  const navigateHandler = () => {
+    navigate("/");
+  };
 
   return (
     <>
@@ -57,13 +63,21 @@ export default function Rakuten() {
             <div className="flex flex-wrap gap-8">
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">アカウント</span>
-                <select name="" id="" className="p-1 bg-[#101204] rounded-lg outline-none">
+                <select
+                  name=""
+                  id=""
+                  className="p-1 bg-[#101204] rounded-lg outline-none"
+                >
                   <option value="">1: sample@sample.com</option>
                 </select>
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">P.G.</span>
-                <select name="" id="" className="p-1 bg-[#101204] rounded-lg outline-none">
+                <select
+                  name=""
+                  id=""
+                  className="p-1 bg-[#101204] rounded-lg outline-none"
+                >
                   <option value="">Proxyなし</option>
                 </select>
               </div>
@@ -73,22 +87,37 @@ export default function Rakuten() {
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">発売日時</span>
-                <input type="text" className="p-1 px-2 bg-[#101204] rounded-lg outline-none" />
+                <input
+                  type="text"
+                  className="p-1 px-2 bg-[#101204] rounded-lg outline-none"
+                />
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">要求回数</span>
-                <input type="text" className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20" />
+                <input
+                  type="text"
+                  className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
+                />
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">要求間隔</span>
-                <input type="text" className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20" />
+                <input
+                  type="text"
+                  className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
+                />
               </div>
               <div>
-                <span className="text-white bg-[#BC21B7] py-1 px-2 rounded-xl">プルダウンメニュー読込</span>
+                <span className="text-white bg-[#BC21B7] py-1 px-2 rounded-xl">
+                  プルダウンメニュー読込
+                </span>
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">サイズ・色</span>
-                <select name="" id="" className="p-1 bg-[#101204] rounded-lg outline-none">
+                <select
+                  name=""
+                  id=""
+                  className="p-1 bg-[#101204] rounded-lg outline-none"
+                >
                   <option value="">Proxyなし</option>
                 </select>
               </div>
@@ -98,7 +127,10 @@ export default function Rakuten() {
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">検索ワード</span>
-                <input type="text" className="p-1 px-2 bg-[#101204] rounded-lg outline-none" />
+                <input
+                  type="text"
+                  className="p-1 px-2 bg-[#101204] rounded-lg outline-none"
+                />
               </div>
               <div className="flex gap-3 items-center">
                 <input type="checkbox" />
@@ -110,7 +142,11 @@ export default function Rakuten() {
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">監視種別.</span>
-                <select name="" id="" className="p-1 bg-[#101204] rounded-lg outline-none">
+                <select
+                  name=""
+                  id=""
+                  className="p-1 bg-[#101204] rounded-lg outline-none"
+                >
                   <option value="">時限商品のため監視しない</option>
                   <option value="">商品ページ監視から始める</option>
                   <option value="">カート挿入コマンドから始める</option>
@@ -118,13 +154,21 @@ export default function Rakuten() {
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">支払い方法.</span>
-                <select name="" id="" className="p-1 bg-[#101204] rounded-lg outline-none">
+                <select
+                  name=""
+                  id=""
+                  className="p-1 bg-[#101204] rounded-lg outline-none"
+                >
                   <option value="">登録済みクレカ</option>
                 </select>
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">数量.</span>
-                <select name="" id="" className="p-1 bg-[#101204] rounded-lg outline-none">
+                <select
+                  name=""
+                  id=""
+                  className="p-1 bg-[#101204] rounded-lg outline-none"
+                >
                   <option value="">1</option>
                   <option value="">2</option>
                   <option value="">3</option>
@@ -139,8 +183,18 @@ export default function Rakuten() {
               </div>
             </div>
             <div className="flex flex-wrap justify-between">
-              <button className="bg-[#36C77054] text-[#18EE6D] hover:bg-[#36C770] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12">OK</button>
-              <button className="bg-[#EA2E4554] text-[#ED1B34] hover:bg-[#EA2E45] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12">キャンセル</button>
+              <button
+                className="bg-[#36C77054] text-[#18EE6D] hover:bg-[#36C770] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12"
+                onClick={navigateHandler}
+              >
+                OK
+              </button>
+              <button
+                className="bg-[#EA2E4554] text-[#ED1B34] hover:bg-[#EA2E45] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12"
+                onClick={navigateHandler}
+              >
+                キャンセル
+              </button>
             </div>
           </div>
         </div>

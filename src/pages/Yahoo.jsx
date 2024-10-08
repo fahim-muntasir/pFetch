@@ -1,8 +1,15 @@
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { RiRefreshFill } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import websiteImg from "../assets/images/website.jpg";
 
 export default function Yahoo() {
+  const navigate = useNavigate();
+
+  const navigateHandler = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <div className="bg-[#101204] min-h-screen">
@@ -184,10 +191,16 @@ export default function Yahoo() {
               </div>
             </div>
             <div className="flex flex-wrap justify-between">
-              <button className="bg-[#36C77054] text-[#18EE6D] hover:bg-[#36C770] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12">
+              <button
+                className="bg-[#36C77054] text-[#18EE6D] hover:bg-[#36C770] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12"
+                onClick={navigateHandler}
+              >
                 OK
               </button>
-              <button className="bg-[#EA2E4554] text-[#ED1B34] hover:bg-[#EA2E45] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12">
+              <button
+                className="bg-[#EA2E4554] text-[#ED1B34] hover:bg-[#EA2E45] hover:text-white text-xl w-52 rounded-lg shadow-lg block h-12"
+                onClick={navigateHandler}
+              >
                 キャンセル
               </button>
             </div>
