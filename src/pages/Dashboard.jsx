@@ -196,14 +196,14 @@ export default function Dashboard() {
                   <td className="px-4 py-5 flex justify-center">
                     {isPlay.includes(i) ? (
                       <button
-                        className="bg-[#EB2E4554] hover:bg-red-600 text-[#EA2E45] rounded-full w-[27px] h-[27px] flex justify-center items-center"
+                        className="bg-[#EB2E4554] hover:bg-red-600 text-[#EA2E45] rounded-full w-[27px] h-[27px] flex justify-center items-center pl-[2px]"
                         onClick={() => handlePlayToggle(i)} // Stop playing, remove from play array
                       >
                         <RiCheckboxBlankFill />
                       </button>
                     ) : (
                       <button
-                        className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[27px] h-[27px] flex justify-center items-center"
+                        className="bg-[#36C77054] hover:bg-green-600 text-[#36C770] rounded-full w-[27px] h-[27px] flex justify-center items-center pl-[3px]"
                         onClick={() => handlePlayToggle(i)} // Start playing, add to play array
                       >
                         <FaPlay />
