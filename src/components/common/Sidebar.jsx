@@ -17,13 +17,13 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     key: 'タスク一覧',
     label: 'タスク一覧',
     path: '/',
-    icon: <IoDocumentText className='text-[41px] text-white' />,
+    icon: <IoDocumentText className='text-[41px] text-white mr-3' />,
   },
   {
     key: 'サイト毎の設定',
     label: 'サイト毎の設定',
     path: '/サイト毎の設定',
-    icon: <IoMdSettings  className='text-[41px] text-white' />,
+    icon: <IoMdSettings  className='text-[41px] text-white mr-3' />,
     submenu: [
       { key: '楽天市場、 楽天ブックス、 楽天ビック', label: '楽天市場、 楽天ブックス、 楽天ビック', path: '/サイト毎の設定/楽天市場、楽天ブックス、楽天ビック' },
       { key: 'Yahoo!ショッピング、 LOHACO', label: 'Yahoo!ショッピング、 LOHACO', path: '/サイト毎の設定/Yahoo!ショッピング、LOHACO' },
@@ -34,7 +34,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     key: 'アカウント一覧',
     label: 'アカウント一覧',
     path: '/アカウント一覧',
-    icon: <img src={Icon3} alt="icon3" className="h-[37px] w-[37px] mr-1" />,
+    icon: <img src={Icon3} alt="icon3" className="h-[37px] w-[37px] mr-3" />,
 	submenu: [
 		{ key: '楽天市場、 楽天ブックス、 楽天ビック', label: '楽天市場、 楽天ブックス、 楽天ビック', path: '/アカウント一覧/楽天市場、楽天ブックス、楽天ビック' },
 		{ key: 'Yahoo!ショッピング', label: 'Yahoo!ショッピング', path: '/アカウント一覧/Yahoo!ショッピング' },
@@ -45,13 +45,13 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     key: 'クレジットカード一覧',
     label: 'クレジットカード一覧',
     path: '/クレジットカード一覧',
-    icon: <img src={Icon4} alt="icon4" className="h-[39px] w-[39px]" />,
+    icon: <img src={Icon4} alt="icon4" className="h-[39px] w-[39px] mr-3" />,
   },
   {
     key: 'Proxy一覧',
     label: 'Proxy一覧',
     path: '/Proxy一覧',
-    icon: <img src={Icon5} alt="icon5" className="h-[39px] w-[39px]" />,
+    icon: <img src={Icon5} alt="icon5" className="h-[39px] w-[39px] mr-3" />,
   },
 ];
 
