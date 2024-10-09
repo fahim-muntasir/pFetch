@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toastify
 import Layout from "./components/common/Layout";
 import Dashboard from "./pages/Dashboard";
 import Market from "./pages/Market";
@@ -51,6 +53,8 @@ function App() {
         <Route path="yahoo" element={<Yahoo />} />
         <Route path="lohaco" element={<Lohaco />} />
       </Routes>
+      {/* Add ToastContainer here to display notifications */}
+      <ToastContainer />
     </Router>
   );
 }
