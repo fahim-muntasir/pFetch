@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Rakuten() {
   const [numberOfRq, setNumberOfRq] = useState(5);
+  const [numberOfRqLabel, setNumberOfRqLabel] = useState("要求回数");
   const [rqInterval, setRqInterval] = useState(30);
   const navigate = useNavigate();
 
@@ -17,12 +18,15 @@ export default function Rakuten() {
     switch (e.target.value) {
       case "時限商品のため監視しない":
         setNumberOfRq(5)
+        setNumberOfRqLabel("要求回数")
         break;
       case "商品ページ監視から始める":
         setNumberOfRq(1)
+        setNumberOfRqLabel("持続時間（分)")
         break;
       case "カート挿入コマンドから始める":
         setNumberOfRq(1)
+        setNumberOfRqLabel("要求回数")
         break;
     
       default:
@@ -112,7 +116,7 @@ export default function Rakuten() {
                 />
               </div>
               <div className="flex gap-3 items-center">
-                <span className="text-[#BBBBBB]">要求回数</span>
+                <span className="text-[#BBBBBB]">{numberOfRqLabel}</span>
                 <input
                   type="text"
                   value={numberOfRq}
