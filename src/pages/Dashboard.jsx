@@ -174,7 +174,7 @@ export default function Dashboard() {
                   </td>
                   <td className="px-4 py-5" onClick={handleNavigation}>
                     {/* Progress Bar */}
-                    <div className="w-full bg-gray-600 rounded-full h-2.5">
+                    <div className="w-full overflow-hidden bg-gray-600 rounded-full h-2.5">
                       <div
                         className="bg-green-500 h-2.5 rounded-full"
                         style={{ width: `${(i + 1) * 10}%` }}
