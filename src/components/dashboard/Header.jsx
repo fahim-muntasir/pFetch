@@ -41,7 +41,7 @@ export default function Header({
         <button className="bg-[#EB2E4554] hover:bg-red-600 text-[#EA2E45] rounded-full w-[32px] h-[32px]  flex justify-center items-center">
           <RiCheckboxBlankFill />
         </button>
-        <button className="bg-[#EB2E455E] hover:bg-[#EB2E455E] border border-[#EB2E45] text-white rounded-full w-[32px] h-[32px]  flex justify-center items-center">
+        <button className="bg-[#EB2E455E] text-[#EA2E45] hover:bg-[#EB2E45] hover:text-white rounded-full w-[32px] h-[32px]  flex justify-center items-center">
           <RiDeleteBin6Line />
         </button>
       </div>
