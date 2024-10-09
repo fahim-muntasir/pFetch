@@ -3,9 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 const linkClass =
-  "flex w-full font-sans items-center gap-2 font-light px-7 py-2 hover:no-underline active:bg-neutral-600 rounded-sm text-lg";
+  "flex w-full font-sans items-center gap-5 font-light px-7 py-2 hover:no-underline active:bg-neutral-600 rounded-sm text-lg";
 
-export default function SidebarLink({ link, hovered }) {
+export default function SidebarLink({ link, hovered, isCollapsed }) {
   const { pathname } = useLocation();
   const decodedPathname = decodeURIComponent(pathname);
 
@@ -22,6 +22,7 @@ export default function SidebarLink({ link, hovered }) {
         isActive
           ? "bg-[#181C1678] text-white"
           : "text-[#BBBBBB] hover:text-white",
+        isCollapsed && "justify-center",
         linkClass
       )}
       onClick={(e) => {
@@ -30,10 +31,11 @@ export default function SidebarLink({ link, hovered }) {
         }
       }}
     >
-      <span className="text-xl">{link.icon}</span>
-      {link.label}
+      <span className="text-4xl text-white">{link.icon}</span>
+      {!isCollapsed && link.label}
 
-      {link.submenu &&
+      {!isCollapsed &&
+        link.submenu &&
         (hovered === link.key ? (
           <MdKeyboardArrowLeft className="absolute right-5" />
         ) : (
