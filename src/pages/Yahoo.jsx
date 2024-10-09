@@ -1,13 +1,37 @@
+import { useState } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { RiRefreshFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import websiteImg from "../assets/images/website.jpg";
 
 export default function Yahoo() {
+  const [numberOfRq, setNumberOfRq] = useState(5);
+  const [numberOfRqLabel, setNumberOfRqLabel] = useState("要求回数");
+  const [rqInterval, setRqInterval] = useState(30);
   const navigate = useNavigate();
 
   const navigateHandler = () => {
     navigate("/");
+  };
+
+  const monitoringHandler = (e) => {
+    switch (e.target.value) {
+      case "時限商品のため監視しない":
+        setNumberOfRq(5);
+        setNumberOfRqLabel("要求回数");
+        break;
+      case "商品ページ監視から始める":
+        setNumberOfRq(1);
+        setNumberOfRqLabel("持続時間（分)");
+        break;
+      case "カート挿入コマンドから始める":
+        setNumberOfRq(1);
+        setNumberOfRqLabel("要求回数");
+        break;
+
+      default:
+        break;
+    }
   };
 
   return (
@@ -93,10 +117,11 @@ export default function Yahoo() {
                 />
               </div>
               <div className="flex gap-3 items-center">
-                <span className="text-[#BBBBBB]">要求回数</span>
+                <span className="text-[#BBBBBB]">{numberOfRqLabel}</span>
                 <input
                   type="text"
-                  value={5}
+                  value={numberOfRq}
+                  onChange={(e) => setNumberOfRq(e.target.value)}
                   className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
                 />
               </div>
@@ -104,7 +129,8 @@ export default function Yahoo() {
                 <span className="text-[#BBBBBB]">要求間隔</span>
                 <input
                   type="text"
-                  value={30}
+                  value={rqInterval}
+                  onChange={(e) => setRqInterval(e.target.value)}
                   className="p-1 px-2 bg-[#101204] rounded-lg outline-none w-20"
                 />
               </div>
@@ -143,30 +169,33 @@ export default function Yahoo() {
                 <span className="text-[#BBBBBB]">事前ログイン</span>
               </div>
               <div className="flex gap-3 items-center">
-                <span className="text-[#BBBBBB]">E.S.</span>
+                <span className="text-[#BBBBBB]">監視種別.</span>
+                <select
+                  name=""
+                  id=""
+                  className="p-1 bg-[#101204] rounded-lg outline-none"
+                  onChange={monitoringHandler}
+                >
+                  <option value="時限商品のため監視しない">
+                    時限商品のため監視しない
+                  </option>
+                  <option value="商品ページ監視から始める">
+                    商品ページ監視から始める
+                  </option>
+                  <option value="カート挿入コマンドから始める">
+                    カート挿入コマンドから始める
+                  </option>
+                </select>
+              </div>
+              <div className="flex gap-3 items-center">
+                <span className="text-[#BBBBBB]">支払い方法.</span>
                 <select
                   name=""
                   id=""
                   className="p-1 bg-[#101204] rounded-lg outline-none"
                 >
-                  <option value="">0 : なし</option>
+                  <option value="">登録済みクレカ</option>
                 </select>
-              </div>
-              <div className="flex gap-3 items-center">
-                <span className="text-[#BBBBBB]">アカウント</span>
-                <select
-                  name=""
-                  id=""
-                  className="p-1 bg-[#101204] rounded-lg outline-none"
-                >
-                  <option value="">時限商品のため監視しない</option>
-                  <option value="">商品ページ監視から始める</option>
-                  <option value="">カート挿入コマンドから始める</option>
-                </select>
-              </div>
-              <div className="flex gap-3 items-center">
-                <input type="checkbox" />
-                <span className="text-[#BBBBBB]">お酒</span>
               </div>
               <div className="flex gap-3 items-center">
                 <span className="text-[#BBBBBB]">数量.</span>
@@ -186,10 +215,6 @@ export default function Yahoo() {
                   <option value="">9</option>
                   <option value="">10</option>
                 </select>
-              </div>
-              <div className="flex gap-3 items-center">
-                <input type="checkbox" />
-                <span className="text-[#BBBBBB]">ポイント優先使用</span>
               </div>
             </div>
             <div className="flex flex-wrap justify-between">
