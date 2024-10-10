@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RiDeleteBin6Line, RiCheckboxBlankFill } from "react-icons/ri";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { FaPlay } from "react-icons/fa6";
 import Header from "../components/dashboard/Header";
 import { getTotalPage, getVisibleData } from "../utils/pagination";
@@ -50,7 +50,6 @@ export default function Dashboard() {
   const handlePageChange = (page) => {
     if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
-    setSelectAll(false);
   };
 
   // Handle rows per page change

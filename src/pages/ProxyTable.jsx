@@ -37,7 +37,6 @@ export default function ProxyTable() {
   const handlePageChange = (page) => {
     if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
-    setSelectAll(false);
   };
 
   // Handle rows per page change
