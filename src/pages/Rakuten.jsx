@@ -37,7 +37,7 @@ export default function Rakuten() {
             <select
               name=""
               id=""
-              className="bg-[#1D2221] rounded-xl p-3 box-content"
+              className="bg-[#101204] rounded-xl p-3 box-content block w-[439px]"
             >
               <option value="" selected>
                 楽天市場、 楽天ブックス、 楽天ビック
