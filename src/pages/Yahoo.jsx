@@ -46,7 +46,7 @@ export default function Yahoo() {
               className="bg-[#1D2221] rounded-xl p-3 box-content"
             >
               <option value="">楽天市場、 楽天ブックス、 楽天ビック</option>
-              <option value="">Yahoo!ショッピング</option>
+              <option value="" selected>Yahoo!ショッピング</option>
               <option value="">LOHACO</option>
             </select>
           </div>

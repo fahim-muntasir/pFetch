@@ -44,7 +44,7 @@ export default function Rakuten() {
               id=""
               className="bg-[#1D2221] rounded-xl p-3 box-content"
             >
-              <option value="">楽天市場、 楽天ブックス、 楽天ビック</option>
+              <option value="" selected>楽天市場、 楽天ブックス、 楽天ビック</option>
               <option value="">Yahoo!ショッピング</option>
               <option value="">LOHACO</option>
             </select>

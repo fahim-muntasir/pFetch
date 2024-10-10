@@ -47,7 +47,7 @@ export default function Lohaco() {
             >
               <option value="">楽天市場、 楽天ブックス、 楽天ビック</option>
               <option value="">Yahoo!ショッピング</option>
-              <option value="">LOHACO</option>
+              <option value="" selected>LOHACO</option>
             </select>
           </div>
         </div>
